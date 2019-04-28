@@ -2,6 +2,7 @@
 obj
 *.user
 *.suo
+packages
 .vs
 .vscode
 .idea
