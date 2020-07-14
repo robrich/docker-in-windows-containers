@@ -1,8 +1,0 @@
-﻿bin
-obj
-*.user
-*.suo
-packages
-.vs
-.vscode
-.idea

@@ -1,7 +1,7 @@
 Docker for Windows Container Development
 ========================================
 
-Here's the code we built for [Docker for Windows Container Development](https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=277530) at DockerCon SF 2019.  These samples show how to containerize a .NET Framework app and service and a .NET Core app and service into Windows containers.
+Here's the code we built for Docker for Windows Container Development.  These samples show how to containerize a .NET Framework app and service and a .NET Core app and service into Windows containers.
 
 Usage
 -----
@@ -17,6 +17,7 @@ Usage
    docker build -t netframework-site -f WebApplication1/Dockerfile .
    docker container run --detach --publish 5000:80 netframework-site
    ```
+
 3. To build and run the .NET Core containers:
 
    ```bash
@@ -32,7 +33,7 @@ License
 -------
 The MIT License
 
-Copyright (c) 2019 Richardson & Sons, LLC. https://www.richardsonandsons.com
+Copyright (c) 2020 Richardson & Sons, LLC. https://www.richardsonandsons.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
