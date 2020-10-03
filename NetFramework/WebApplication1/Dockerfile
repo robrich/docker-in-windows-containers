@@ -1,4 +1,5 @@
-﻿FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 as build
+﻿# build container
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 as build
 
 WORKDIR /src
 
@@ -16,10 +17,10 @@ RUN msbuild NetFramework.sln /p:Configuration=Release /m
 RUN msbuild WebApplication1/WebApplication1.csproj /p:Configuration=Release /m /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 
 
-
+# production runtime container
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
 
 WORKDIR /inetpub/wwwroot
 COPY --from=build /src/WebApplication1/bin/app.publish .
 
-# CMD defined in base container
+# CMD for IIS is in base container

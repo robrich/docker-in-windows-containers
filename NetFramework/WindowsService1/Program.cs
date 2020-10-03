@@ -13,10 +13,10 @@ namespace WindowsService1
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
-		static void Main()
+		static void Main(string[] args)
 		{
 			var service = new Service1();
-			service.OnStart(new string[] { });
+			service.OnStart(args);
 			while(true)
 			{
 				Thread.Sleep(1000);

@@ -6,37 +6,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace WindowsService1
 {
 	public partial class Service1
 	{
-		private readonly Timer timer;
+		private readonly Timer timer1;
+
 		public Service1()
 		{
-			timer = new Timer()
+			this.timer1 = new Timer()
 			{
-				Interval = 1000,
-				Enabled = false
+				Enabled = false,
+				Interval = 1000
 			};
-			timer.Elapsed += this.Timer_Elapsed;
+			this.timer1.Elapsed += this.timer1_elapsed;
 		}
 
-		private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+		private void timer1_elapsed(object sender, ElapsedEventArgs e)
 		{
-			Console.WriteLine($"Service doing work: {DateTime.Now.ToLongTimeString()}");
+			Console.WriteLine($"Service prcessed: {DateTime.Now.ToLongTimeString()}");
 		}
 
 		public void OnStart(string[] args)
 		{
-			timer.Enabled = true;
+			this.timer1.Enabled = true;
 		}
 
 		public void OnStop()
 		{
-			timer.Enabled = false;
+			this.timer1.Enabled = false;
 		}
 	}
 }

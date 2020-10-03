@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8A23C56-0194-4BD6-B968-E7B956711F31}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{A0F1EAF3-5E18-4A8C-8A5F-A7C638091D14}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsService1</RootNamespace>
     <AssemblyName>WindowsService1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -31,9 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
