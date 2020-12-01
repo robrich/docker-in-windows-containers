@@ -1,39 +1,41 @@
 Docker for Windows Container Development
 ========================================
 
-Here's the code we built for Docker for Windows Container Development.  These samples show how to containerize a .NET Framework app and service and a .NET Core app and service into Windows containers.
+Here's the code we built for Docker for Windows Container Development.  These samples show how to containerize a .NET app and service into Windows and Linux containers.
 
 Usage
 -----
 
-1. Switch to Windows Containers by right-clicking on the whale in the system tray by the clock, and choose "Switch to Windows Containers".  If it says "Switch to Linux Containers", you're in the right place.
+1. Use on either Windows or Linux containers.  To switch, right-click on the whale in the system tray by the clock, and choose "Switch to Windows Containers" or "Switch to Linux Containers".
 
-2. To build and run the .NET Framework containers:
+2. To build and run NetApp1 containers:
 
    ```bash
-   cd NetFrameworkApp
-   docker build --file WindowsService1/Dockerfile --tag netframework-service  .
-   docker container run netframework-service
-   docker build -t netframework-site -f WebApplication1/Dockerfile .
-   docker container run --detach --publish 5000:80 netframework-site
+   cd NetApp1/WorkerService1
+   docker build --tag netapp1-svc  .
+   docker container run netapp1-svc
+   cd ..
+   cd WebApplication1
+   docker build -t netapp1-web .
+   docker container run -d -p 80:80 netapp1-web
+   cd ..
    ```
-
-3. To build and run the .NET Core containers:
+3. To build and run the NetApp2 containers:
 
    ```bash
-   cd NetCoreApp
+   cd NetApp2
    docker-compose build
    docker-compose up
    ```
 
-   or open Visual Studio 2019, and switch the Debug profile in the top task bar from `IIS Express` to `Docker`, then push debug.
+   or open Visual Studio 2019, and switch from `IIS Express` to `Docker Compose` profile in the top task bar, then push debug.
 
 
 License
 -------
 The MIT License
 
-Copyright (c) 2020 Richardson & Sons, LLC. https://www.richardsonandsons.com
+Copyright (c) 2019-2020 Richardson & Sons, LLC. https://www.richardsonandsons.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

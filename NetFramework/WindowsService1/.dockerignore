@@ -1,7 +1,0 @@
-﻿bin
-obj
-*.user
-*.suo
-.vs
-*.log
-packages
